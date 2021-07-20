@@ -3,10 +3,22 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { StateProvider } from "./stateProvider";
+import reducer, { initialState } from "./reducer";
+import "bootstrap/dist/css/bootstrap.min.css"
+// import Footer from './Footer';
+
+
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+      {/* <Footer /> */}
+    </StateProvider>
+    <reducer />
+
   </React.StrictMode>,
   document.getElementById('root')
 );
